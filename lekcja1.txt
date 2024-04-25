@@ -1,0 +1,53 @@
+'''
+print("Hello World!!!")
+print("Dzisiaj ",end='')
+print("jest ",end='')
+print("czwartek")
+
+print("jestem ",end='\n')
+print("na zajęciach ",end='')
+print("z PO")
+
+print(1)
+print("2")
+print(1+2)
+print('1'+'2')
+print(str(1)+'2')
+print(1+int("2"))
+
+print("Dzisiaj jest ",25,'kwietnia')
+
+tekst="zmienna"
+print(tekst)
+tekst_zklawy=input("podaj tekst: ")
+print(tekst_zklawy)
+liczba_zklawy=int(input("podaj tekst: "))
+print(liczba_zklawy*10)
+'''
+#kalkulator
+'''
+liczba1=int(input("podaj 1 liczbę"))
+liczba2=int(input("podaj 2 liczbę"))
+dzialanie = input("podaj dzialanie")
+if dzialanie == "-":
+    print(liczba1 - liczba2)
+elif dzialanie == "+":
+    print(liczba1 + liczba2)
+elif dzialanie == "*":
+    print(liczba1 + liczba2)
+elif dzialanie == "/":
+    print(liczba1 + liczba2)
+    if liczba2 != 0:
+        print(liczba1 / liczba2)
+    else:
+        print("nie dziel przez 0")
+'''
+liczba1=int(input("podaj 1 liczbę"))
+liczba2=int(input("podaj 2 liczbę"))
+liczba3=int(input("podaj 3 liczbę"))
+if liczba1>liczba2 and liczba1 > liczba3:
+        print("liczba ",liczba1," jest największa")
+elif liczba2>liczba1 and liczba2>liczba3:
+        print("liczba ",liczba2," jest największa")
+else:
+    print("liczba ",liczba3," jest najwieksza")
