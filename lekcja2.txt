@@ -1,0 +1,141 @@
+import random
+
+
+
+COLOR_RESET = '\033[0m'
+COLOR_BOLD_UP = '\033[1m'
+COLOR_BOLD_DOWN = '\033[2m'
+COLOR_ITALIC = '\033[3m'
+COLOR_UNDERLINE = '\033[4m'
+COLOR_BLINK    = '\033[5m'
+COLOR_BLINK2   = '\033[6m'
+COLOR_SELECTED = '\033[7m'
+
+COLOR_BLACK = '\033[90m'
+COLOR_RED = '\033[91m'
+COLOR_GREEN = '\033[92m'
+COLOR_YELLOW = '\033[93m'
+COLOR_BLUE = '\033[94m'
+COLOR_MAGENTA = '\033[95m'
+COLOR_CYAN = '\033[96m'
+COLOR_WHITE = '\033[97m'
+
+CBLACK  = '\033[30m'
+CRED    = '\033[31m'
+CGREEN  = '\033[32m'
+CYELLOW = '\033[33m'
+CBLUE   = '\033[34m'
+CMAGENTA = '\033[35m'
+CCYAN  = '\033[36m'
+CWHITE  = '\033[37m'
+
+BG_BLACK  = '\033[40m'
+BG_RED    = '\033[41m'
+BG_GREEN  = '\033[42m'
+BG_YELLOW = '\033[43m'
+BG_BLUE   = '\033[44m'
+BG_MAGENTA = '\033[45m'
+BG_CYAN  = '\033[46m'
+BG_WHITE  = '\033[47m'
+
+COLORS = [
+COLOR_RESET,
+COLOR_BOLD_UP,
+COLOR_BOLD_DOWN,
+COLOR_ITALIC,
+COLOR_UNDERLINE,
+COLOR_BLINK,
+COLOR_BLINK2,
+COLOR_SELECTED,
+
+COLOR_BLACK,
+COLOR_RED,
+COLOR_GREEN,
+COLOR_YELLOW,
+COLOR_BLUE,
+COLOR_MAGENTA,
+COLOR_CYAN,
+COLOR_WHITE,
+
+CBLACK,
+CRED,
+CGREEN,
+CYELLOW,
+CBLUE,
+CMAGENTA,
+CCYAN,
+CWHITE,
+
+BG_BLACK,
+BG_RED,
+BG_GREEN,
+BG_YELLOW,
+BG_BLUE,
+BG_MAGENTA,
+BG_CYAN,
+BG_WHITE,]
+
+# print(COLOR_RED+BG_BLUE+'tak'+COLOR_RESET)
+# print(COLOR_ITALIC+'tak'+COLOR_RESET)
+# print(COLOR_SELECTED+'tak'+COLOR_RESET)
+# print(CCYAN+'tak'+COLOR_RESET)
+# print('tak')
+
+# for i in range (1,4):
+#     los=round(random.random()*100)
+#     if los%2 == 0:
+#         print(COLOR_RED+BG_BLUE+str(los)+COLOR_RESET)
+#     else:
+#         print(COLOR_GREEN+BG_MAGENTA + str(los) + COLOR_RESET)
+
+# for i in range (1,10):
+#     los=round(random.random()*100)
+#     lkc=round(random.randrange(1,32))
+#     lk = COLORS[lkc]+
+#     print(lk+'pętla nr.'+str(i)+' wylosowanao: '+str(los)+COLOR_RESET)
+
+# rozmiar=10
+# licznik=0
+# licznik_w=0
+# ujemne= 0
+# for i in range(1,rozmiar+1):
+#     for j in range(1,rozmiar+1):
+#         los=random.randrange(-150,151)
+#         if j==i:
+#             print(COLOR_YELLOW, end='')
+#             licznik+=los
+#         elif los<0:
+#             print(COLOR_RED,end='')
+#         elif los>0:
+#             print(COLOR_BLUE,end='')
+#         else:
+#             print(COLOR_GREEN,end='')
+#         print(f'{los:4.0f}',COLOR_RESET,end=' ')
+#         licznik_w+=los;
+#     if licznik_w < 0:
+#         ujemne += 1
+#     print(COLOR_MAGENTA,f'{licznik_w:4.0f}',COLOR_CYAN,end=' ')
+#     licznik_w=0
+#
+#     print()
+# print(licznik,COLOR_RESET)
+# print('ujemne: '+str(ujemne))
+# print('nieujemne: '+str(rozmiar-ujemne))
+
+tab = []
+for i in range(0,10):
+    tab.append(random.randrange(-150,151))
+
+print("LICZBA ELEMENTÓW W TANLICY: ", len(tab))
+print("Pierwszy element: ",tab[0])
+print("Ostatni element: ",tab[len(tab)-1])
+for i in range(0,len(tab)):
+    print(tab[i],end=', ')
+print()
+for i in range(len(tab)-1,-1,-1):
+    print(tab[i],end=', ')
+tab.sort()
+print()
+for i in range(0,len(tab)):
+    print(tab[i],end=', ')
+
