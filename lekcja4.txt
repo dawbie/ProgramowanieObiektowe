@@ -1,0 +1,77 @@
+#-----------------------------------------------------lekcja4(klasy,instancje,objekty,metody)
+# x="abc"
+# print(type(x))
+# print(x)
+#
+# class Fabryka:
+#     pass
+#
+# pojazd_1 = Fabryka()
+# pojazd_2 = Fabryka()
+
+class Auto():
+    pojemnosc = 10
+    kierunek = "prosto"
+    zaplon = 0
+    bak = 10
+
+    def zatankuj(self,ile):
+        if self.bak+ile<=10:
+            self.bak = self.bak+ile
+            print("zatantowaleś "+str(ile)+" l")
+        else:
+            print("pełny bak, rozlałes "+str((ile+self.bak)-self.pojemnosc)+" l")
+    def zapal(self):
+        if self.zaplon==0:
+            print("wrrrrr")
+            self.zaplon=1
+        else:
+            self.zaplon=0
+            print("--------")
+    def jedz(self):
+        if self.zaplon==1:
+            self.kierunek="prosto"
+            print("jedziesz prosto")
+            self.bak = self.bak-1
+        else:
+            print("najpierw włącz silnik")
+    def stoj(self):
+        if self.zaplon==1:
+            print("stoj")
+            self.zaplon = 0
+        else:
+            print("stoisz")
+    def skrent(self,strona):
+        self.kierunek=strona
+        if self.zaplon==1:
+            print(strona + "-skrent")
+            self.kierunek=strona
+            self.bak = self.bak - 1
+        else:
+            print("najpierw włącz silnik")
+    def reczny(self):
+        if self.zaplon==0:
+            print("-------")
+        else:
+            if self.kierunek == "prosto":
+                print("zatrzymanie")
+            else:
+                print("poślizg")
+
+    def __init__(self):
+        print("tworze samochód konkretnego wlasciciela")
+
+    def __str__(self):
+        print("cos to robi")
+    pass
+
+panda = Auto()
+
+panda.zapal()
+panda.jedz()
+panda.skrent("prawo")
+panda.skrent("lewo")
+panda.jedz()
+panda.reczny()
+panda.zatankuj(5)
+panda.__init__()
