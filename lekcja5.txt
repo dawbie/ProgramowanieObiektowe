@@ -1,0 +1,45 @@
+# class Samochod():
+#     kolor = "czerwony"
+#     bagaznik = []
+#     def jazda_w_kierunku(self):
+#         print("samochód jedzie...")
+#
+# Samochod_Karola = Samochod()
+# Samochod_Janka = Samochod()
+#
+# Samochod_Karola.jazda_w_kierunku()
+# print(Samochod_Karola.kolor)
+#
+# Samochod_Janka.kolor = "zielony"
+# print(Samochod_Janka.kolor)
+# print(Samochod_Karola.kolor)
+#
+# Samochod_Karola.bagaznik.append("coś")
+#
+# print(Samochod_Karola.bagaznik)
+# print(Samochod_Janka.bagaznik)
+
+class Samochod():
+    kolor = "czerwony"
+    bagaznik = []
+    pojemnosc = 5
+    spalanie = 5
+
+    def __init__(self,kolor):
+        self.kolor = kolor
+
+    def jazda_w_kierunku(self):
+        print("samochód jedzie...")
+
+class Pojazd_spalinowy(Samochod):
+    def __init__(self, bak, kolor):
+        super().__init__(kolor)
+        self.bak = bak
+
+    def sprawdz_olej(self):
+        return "Poziom oleju jest ok"
+
+Pojazd_spalinowy_1 = Pojazd_spalinowy("biały",3)
+print(Pojazd_spalinowy_1.bak)
+print(Pojazd_spalinowy_1.sprawdz_olej())
+Pojazd_spalinowy_1.jazda_w_kierunku()
