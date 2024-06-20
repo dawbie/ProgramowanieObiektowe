@@ -1,0 +1,78 @@
+# ------------------------------------------------------------------------------------------------zecja7
+# class FirstClass:
+#     def __init__(self, first_number, second_number):
+#         self.first_nubmer = first_number
+#         self.second_number = second_number
+#     def sum(self):
+#         return self.first_nubmer+self.second_number
+#
+# oject_first_class = FirstClass(12,22)
+
+# class Osoba:
+#     def __init__(self,imie,wiek,miasto):
+#         self.imie=imie
+#         self.wiek=wiek
+#         self.miasto=miasto
+#     def przedstaw_sie(self):
+#         return (f"Czesc jestem {self.imie} mam {self.wiek} lat. Pochodze z {self.miasto}")
+#
+# osoba1 = Osoba("Jacek" ,25, "Sieradz")
+#
+# print(osoba1.przedstaw_sie())
+
+class Zwierze():
+    def __init__(self,imie):
+        self.imie = imie
+    def glos(self):
+        raise NotImplementedError("cośtam")
+
+
+    def pseudionim(self):
+        print(f"mam na imie {self.imie}")
+
+class Kot(Zwierze):
+    def __init__(self,imie,rasa):
+        self.rasa = rasa
+        self.imie = imie
+    def glos(self):
+        return f"{self.imie} robi meow"
+    def zwierze_glos(Zwierze):
+        print(Zwierze.glos())
+
+puszek = Kot("puszek","brytyjczyk")
+print(puszek.glos())
+puszek.pseudionim()
+
+
+class BankAccount:
+    def __init__(self, owner, balance=0):
+        self.owner = owner
+        self.__balance = balance
+
+    def deposit(self, ammount):
+        if ammount > 0:
+            self.__balance += ammount
+            print(f"Deposited {ammount}. New balance: {self.__balance}")
+        else:
+            print("Deposited ammount must be positive")
+
+    def withdraw(self, ammount):
+        if 0 < ammount <= self.__balance:
+            self.__balance -= ammount
+            print(f"Withdraw {ammount}, New balance: {self.__balance}")
+        else:
+            print("Invalid withdraw ammount of insufficient funds")
+
+    def get_balance(self):
+        return self.__balance  # Publiczna metoda dostępu do prywatnego atrybutu
+
+
+# Tworzenie obiektu klasy BankAccount
+account = BankAccount("Alice", 100)
+
+# Próbujemy zdeponować i wypłacić środki
+account.deposit(50)  # Deposited 50, New balance: 150
+account.withdraw(30)  # Withdraw 3-, New balance: 120
+
+# Próbujemy bezpośrednio uzyskać dostep do prywatnego atrybutu
+# print(account.__balance) # AttributeError: 'BankAccount' object has no attribute '__balance
