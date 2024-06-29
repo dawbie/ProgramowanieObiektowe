@@ -1,0 +1,109 @@
+#-----------------------------------------------------lekcja4(klasy,instancje,objekty,metody)
+# x="abc"
+# print(type(x))
+# print(x)
+#
+# class Fabryka:
+#     pass
+#
+# pojazd_1 = Fabryka()
+# pojazd_2 = Fabryka()
+
+class Auto():
+    pojemnosc = 10
+    kierunek = "prosto"
+    zaplon = 0
+    bak = 10
+
+    def zatankuj(self, ile):
+        if self.bak + ile <= self.pojemnosc:
+            self.bak += ile
+            print("Zatankowałeś " + str(ile) + " l")
+        else:
+            print("Pełny bak, rozlałeś " + str((ile + self.bak) - self.pojemnosc) + " l")
+
+    def zapal(self):
+        if self.zaplon == 0:
+            print("wrrrrr")
+            self.zaplon = 1
+        else:
+            self.zaplon = 0
+            print("--------")
+
+    def jedz(self):
+        if self.zaplon == 1:
+            self.kierunek = "prosto"
+            print("Jedziesz prosto")
+            self.bak -= 1
+        else:
+            print("Najpierw włącz silnik")
+
+    def stoj(self):
+        if self.zaplon == 1:
+            print("Stój")
+            self.zaplon = 0
+        else:
+            print("Stoimy")
+
+    def skrent(self, strona):
+        if self.zaplon == 1:
+            print(strona + "-skręt")
+            self.kierunek = strona
+            self.bak -= 1
+        else:
+            print("Najpierw włącz silnik")
+
+    def reczny(self):
+        if self.zaplon == 0:
+            print("-------")
+        else:
+            if self.kierunek == "prosto":
+                print("Zatrzymanie")
+            else:
+                print("Poślizg")
+
+    def __init__(self):
+        print("Tworzę samochód konkretnego właściciela")
+
+    def __str__(self):
+        return "Samochód o pojemności: " + str(self.pojemnosc) + " l, bak: " + str(self.bak) + " l"
+
+panda = Auto()
+
+panda.zapal()
+panda.jedz()
+panda.skrent("prawo")
+panda.skrent("lewo")
+panda.jedz()
+panda.reczny()
+panda.zatankuj(5)
+print(panda)
+
+
+fiat = Auto()
+
+fiat.zapal()
+fiat.jedz()
+fiat.skrent("lewo")
+fiat.jedz()
+fiat.stoj()
+fiat.zatankuj(8)
+print(fiat)
+
+
+class SportAuto(Auto):
+    def nitro(self):
+        if self.zaplon == 1:
+            print("Nitro boost!")
+            self.bak -= 2
+        else:
+            print("Najpierw włącz silnik")
+
+ferrari = SportAuto()
+ferrari.zapal()
+ferrari.nitro()
+ferrari.jedz()
+ferrari.skrent("prawo")
+ferrari.stoj()
+ferrari.zatankuj(3)
+print(ferrari)

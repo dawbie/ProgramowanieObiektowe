@@ -1,0 +1,94 @@
+class Samochod():
+    kolor = "czerwony"
+    bagaznik = []
+    pojemnosc = 5
+    spalanie = 5
+
+    def __init__(self, kolor="czerwony"):
+        self.kolor = kolor
+
+    def jazda_w_kierunku(self):
+        print("samochód jedzie...")
+
+
+Samochod_Karola = Samochod()
+Samochod_Janka = Samochod()
+
+Samochod_Karola.jazda_w_kierunku()
+print(Samochod_Karola.kolor)
+
+Samochod_Janka.kolor = "zielony"
+print(Samochod_Janka.kolor)
+print(Samochod_Karola.kolor)
+
+Samochod_Karola.bagaznik.append("coś")
+
+print(Samochod_Karola.bagaznik)
+print(Samochod_Janka.bagaznik)
+
+
+class Pojazd_spalinowy(Samochod):
+    def __init__(self, kolor, bak):
+        super().__init__(kolor)
+        self.bak = bak
+
+    def sprawdz_olej(self):
+        return "Poziom oleju jest ok"
+
+
+Pojazd_spalinowy_1 = Pojazd_spalinowy("biały", 3)
+print(Pojazd_spalinowy_1.bak)
+print(Pojazd_spalinowy_1.sprawdz_olej())
+Pojazd_spalinowy_1.jazda_w_kierunku()
+
+
+class ElektrycznySamochod(Samochod):
+    def __init__(self, kolor, bateria):
+        super().__init__(kolor)
+        self.bateria = bateria
+
+    def ladowanie(self):
+        return "Bateria jest ładowana"
+
+
+ElektrycznySamochod_1 = ElektrycznySamochod("niebieski", 100)
+print(ElektrycznySamochod_1.kolor)
+print(ElektrycznySamochod_1.bateria)
+print(ElektrycznySamochod_1.ladowanie())
+ElektrycznySamochod_1.jazda_w_kierunku()
+
+
+class Samochod():
+    kolor = "czerwony"
+    bagaznik = []
+    pojemnosc = 5
+    spalanie = 5
+
+    def __init__(self, kolor="czerwony"):
+        self.kolor = kolor
+
+    def jazda_w_kierunku(self):
+        print("samochód jedzie...")
+
+    def dodaj_do_bagaznika(self, przedmiot):
+        self.bagaznik.append(przedmiot)
+        print(f"Dodano {przedmiot} do bagażnika")
+
+
+Samochod_Tomka = Samochod()
+Samochod_Tomka.dodaj_do_bagaznika("walizka")
+print(Samochod_Tomka.bagaznik)
+
+class NowoczesnySamochod(Samochod):
+    def __init__(self, kolor, system_nawigacji):
+        super().__init__(kolor)
+        self.system_nawigacji = system_nawigacji
+
+    def wlacz_nawigacje(self):
+        print("System nawigacji włączony")
+
+NowoczesnySamochod_1 = NowoczesnySamochod("srebrny", "GPS 2024")
+print(NowoczesnySamochod_1.kolor)
+print(NowoczesnySamochod_1.system_nawigacji)
+NowoczesnySamochod_1.wlacz_nawigacje()
+NowoczesnySamochod_1.jazda_w_kierunku()
